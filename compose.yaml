@@ -12,7 +12,7 @@ services:
       cat-pinterest-api:
         condition: service_started
     ports:
-      - "8080:80"
+      - "3001"
     networks:
       - cat-pinterest-net
 
@@ -36,6 +36,8 @@ services:
       context: ./front/
     networks:
       - cat-pinterest-net
+    ports:
+      - "8080:80"
     environment:
       NODE_ENV: prod
 

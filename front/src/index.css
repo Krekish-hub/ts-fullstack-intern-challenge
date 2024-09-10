@@ -67,3 +67,32 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.cats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cat-card {
+  width: 200px;
+  text-align: center;
+}
+
+.cat-card img {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cats-grid:focus,
+.cats-grid:focus-visible{
+  box-shadow: #1a1a1a;
+  height:calc(+10px);
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.cat-card button.liked {
+  color: red;
+}

@@ -1,8 +1,13 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import express from 'express';
+import cors from 'cors';
+import routes from './routes';
+import cookieParser from 'cookie-parser'
 
-async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
-}
-bootstrap();
+const app = express();
+app.use(cors());
+app.use(cookieParser());
+app.use('/api', routes);
+
+app.listen(3001, () => {
+  console.log('Server is running on http://localhost:3001');
+});
